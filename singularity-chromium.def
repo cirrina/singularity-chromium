@@ -1,0 +1,15 @@
+Bootstrap: docker
+From: centos:centos7.6.1810
+
+
+%environment
+    export PATH=$PATH:/usr/bin
+
+%post
+    yum -y install epel-release wget which nano curl zlib-devel
+    yum -y groupinstall "Development Tools"
+    yum -y install perl
+    yum -y install lynx
+    yum -y install chromium
+
+%runscript
